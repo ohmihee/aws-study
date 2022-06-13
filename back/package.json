@@ -1,0 +1,30 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf migrations && rm -rf build",
+    "migrate:first": "npx prisma migrate dev --name create_categories",
+    "migrate": "npx prisma migrate dev",
+    "dev": "nodemon",
+    "pull": "npx prisma db pull ",
+    "push": "npx prisma db push",
+    "push:schema": "npx prisma db push --force-reset",
+    "generate": "npx prisma generate",
+    "start": "NODE_ENV=production node build/index.js",
+    "build": "export NODE_OPTIONS=--max_old_space_size=1500 && tsc --resolveJsonModule --esModuleInterop "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.15.1",
+    "express": "^4.18.1",
+    "prisma": "^3.15.1",
+    "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
+}
