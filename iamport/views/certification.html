@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.7.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        const testCli = () => {
+            // axios.get('http://localhost:3000/api/user/test')
+            // .then((result)=>{
+            //     console.log('result',result)
+            // }).catch((err)=>{
+            //     console.log('err', err)
+            // })
+        }
+        const certification = () => {
+            //let IMP = window.IMP;
+            console.log('test')
+            IMP.init("imp04060546");
+            IMP.certification({
+                merchant_uid : 'merchant_' + new Date().getTime()
+            }, (rsp) => {
+                if (rsp.success) {
+                    console.log('success');
+                    console.log(res)
+                } else {
+                    console.log('fail')
+                }
+            })
+        };  
+    </script>
+    <button onclick="certification()">결제하기</button>
+    <button onclick="testCli()">클릭</button>
+    
+</body>
+</html>
