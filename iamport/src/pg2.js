@@ -4,8 +4,8 @@ const {Banks} = Request;
 const {BankCodeEnum} = Enum;
 
 const iamport = new Iamport({
-    apiKey:process.env.IMPKEY || '4639370740024201',
-    apiSecret:process.env.IMPSECRET || '67b4c816ddf58d6918d0e3f428cd3b488d9cb9a5f93724aa02fa42823e7cba30635bf2c63935d4f2'
+    apiKey:process.env.IMPKEY,
+    apiSecret:process.env.IMPSECRET,
 });
 
 const getBanks = Banks.getBanks();

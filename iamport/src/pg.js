@@ -3,12 +3,14 @@
 // imp04060546
 import { post } from './node-fetch';
 import { Iamport, Request, Enum } from 'iamport-rest-client-nodejs';
+import dotenv from 'dotenv';
+dotenv.config()
 const { Banks } = Request;
 const { BankCodeEnum } = Enum;
 
 const url = 'https://api.iamport.kr/users/getToken';
-const imp_key = process.env.IMPKEY || '4639370740024201';
-const imp_secret = process.env.IMPSECRET || '67b4c816ddf58d6918d0e3f428cd3b488d9cb9a5f93724aa02fa42823e7cba30635bf2c63935d4f2';
+const imp_key = process.env.IMPKEY;
+const imp_secret = process.env.IMPSECRET;
 
 const iamport = new Iamport({
     apiKey:imp_key,

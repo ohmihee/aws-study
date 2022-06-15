@@ -5,7 +5,7 @@ const { Certifications } = Request;
 
 export const get_certification = async () => {
     const get_certification_my = Certifications.getCertification({
-        imp_uid: 'imp04060546'
+        imp_uid: ''
     });
     await get_certification_my.request(iamport)
         .then((res:any)=>{
@@ -20,7 +20,7 @@ export const get_certification = async () => {
 
 export const delete_certification = async () => {
     const delete_certification_my = Certifications.deleteCertification({
-        imp_uid: 'imp04060546'
+        imp_uid: ''
     });
     await delete_certification_my.request(iamport)
     .then((res:any)=>{
